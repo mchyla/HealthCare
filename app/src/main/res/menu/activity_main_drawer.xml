@@ -3,11 +3,17 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_visit"
+            android:id="@+id/nav_kids_list"
             android:icon="@drawable/ic_menu_camera"
-            android:title="@string/addKid" />
+            android:title="@string/kidList" />
+
+        <!--<item
+            android:id="@+id/nav_add_kid"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/addKid" />-->
+
         <item
-            android:id="@+id/nav_add_place"
+            android:id="@+id/nav_sc_list"
             android:icon="@drawable/ic_menu_gallery"
             android:title="@string/addSchoolCoordinator" />
         <item

@@ -14,8 +14,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.marcin.healthcare.fragments.KidManagementFragment;
 import com.example.marcin.healthcare.fragments.MainFragment;
-import com.example.marcin.healthcare.fragments.SecondFragment;
+import com.example.marcin.healthcare.fragments.AddKidFragment;
+import com.example.marcin.healthcare.fragments.AddSchoolCoordinatorFragment;
+import com.example.marcin.healthcare.fragments.SCManagementFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -90,15 +93,15 @@ public class MainActivity extends AppCompatActivity
         FragmentManager fm = getFragmentManager();
         int id = item.getItemId();
 
-        if (id == R.id.nav_add_place) {
-            fm.beginTransaction().replace(R.id.content_frame, new SecondFragment()).addToBackStack("fragBack").commit();
+        /*if (id == R.id.nav_add_kid) {
+            fm.beginTransaction().replace(R.id.content_frame, new AddKidFragment()).addToBackStack("fragBack").commit();
 
-        } else if (id == R.id.nav_add_doctor) {
+        } else*/ if (id == R.id.nav_sc_list) {
+            fm.beginTransaction().replace(R.id.content_frame, new SCManagementFragment()).addToBackStack("fragBack").commit();
+       /* } else if (id == R.id.nav_add_place) {*/
 
-        } else if (id == R.id.nav_add_place) {
-
-        } else if (id == R.id.nav_manage) {
-
+        } else if (id == R.id.nav_kids_list) {
+            fm.beginTransaction().replace(R.id.content_frame, new KidManagementFragment()).addToBackStack("fragBack").commit();
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {

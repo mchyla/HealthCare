@@ -26,7 +26,7 @@
             android:layout_alignParentEnd="true" />
 
         <EditText
-            android:id="@+id/textAddress"
+            android:id="@+id/textLastName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -36,26 +36,57 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true" />
 
+    <EditText
+        android:id="@+id/textCollege"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="@string/college"
+        android:layout_below="@+id/textLastName"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:paddingLeft="4.0dip"
+        android:paddingTop="5.0dip"
+        android:paddingRight="4.0dip"
+        android:paddingBottom="1.0dip"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:id="@+id/linearLayout"
+        android:layout_below="@+id/textCollege"
+        android:layout_alignParentStart="true">
+
         <Button
-            android:id="@+id/addPlaceButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Dodaj"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_below="@+id/textAddress" />
+            android:id="@+id/addKidButton"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:text="@string/confirm"
+            android:layout_weight="1.0" />
+
+        <Button
+            android:id="@+id/canceAddKidButton"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:text="@string/cancel"
+            android:layout_weight="1.0" />
+
+    </LinearLayout>
 
     <EditText
         android:id="@+id/editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
         android:hint="@string/proTip"
         android:editable="false"
-        android:layout_below="@+id/addPlaceButton"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="34dp"
         android:ems="10"
         android:inputType="textMultiLine"
+        android:layout_below="@+id/linearLayout"
+        android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true" />
 
 

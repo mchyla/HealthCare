@@ -5,15 +5,32 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    <!--Kid-->
     <string name="addKid">Dodaj dziecko</string>
-    <string name="name">Imie</string>
-    <string name="lastName">Nazwisko</string>
+    <string name="deletKid">Usuń</string>
+    <string name="editKid">Edytuj</string>
     <string name="nameKid">Imie (np. Jana)</string>
     <string name="lastNameKid">Nazwisko (np. Kowalskiego)</string>
     <string name="proTip">Aby generacja przebiegła pomyślnie proszę dodać imię i nazwisko dziecka odmione np. Jana Kowalskiego!</string>
+    <string name="kidList">Zarządzanie dziećmi</string>
+    <!--Universal-->
+    <string name="name">Imie</string>
+    <string name="lastName">Nazwisko</string>
+    <string name="confirm">Potwierdz</string>
+    <string name="cancel">Anuluj</string>
+    <string name="email">E-Mail</string>
+    <string name="fillAllField">Proszę uzupełnić wszystkie pola!</string>
 
+    <string name="college">Kolegium</string>
+
+
+    <!--School coordinator-->
     <string name="addSchoolCoordinator">Dodaj koordynatora szkolnego</string>
+    <string name="deleteSchoolCoordinator">Usuń koordynatora szkolnego</string>
+    <string name="editSchoolCoordinator">Edytuj koordynatora szkolnego</string>
+
     <string name="addCollege">Dodaj kolegium</string>
+
     <string name="generate">Generuj oświadczenie</string>
 
 

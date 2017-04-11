@@ -25,6 +25,11 @@ public class OrmLiteKidRepository {
         return ormLiteDatabaseHelper.getKidDaoR().queryForId(kidId);
     }
 
+    public static List<Kid> findByCollege(Context context, int college) throws SQLException {
+        OrmLiteDatabaseHelper ormLiteDatabaseHelper = OrmLiteDatabaseHelper.getInstance(context);
+        return ormLiteDatabaseHelper.getKidDaoR().queryForEq("College", college);
+    }
+
     public static void addKid(Context context, Kid kid) throws SQLException {
         OrmLiteDatabaseHelper ormLiteDatabaseHelper = OrmLiteDatabaseHelper.getInstance(context);
         //ormLiteDatabaseHelper.getWritableDatabase();
