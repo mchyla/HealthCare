@@ -5,19 +5,19 @@
         <item
             android:id="@+id/nav_visit"
             android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
+            android:title="@string/addKid" />
         <item
             android:id="@+id/nav_add_place"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Placówki" />
+            android:title="@string/addSchoolCoordinator" />
         <item
             android:id="@+id/nav_add_doctor"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:title="@string/addCollege" />
         <item
             android:id="@+id/nav_manage"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:title="@string/generate" />
     </group>
 
     <item android:title="Communicate">

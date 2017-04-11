@@ -11,7 +11,12 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.marcin.healthcare.R;
-import com.example.marcin.healthcare.model.Place;
+import com.example.marcin.healthcare.model.Kid;
+import com.example.marcin.healthcare.repository.OrmLiteKidRepository;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.example.marcin.healthcare.R.id.textAddress;
 import static com.example.marcin.healthcare.R.id.textName;
@@ -33,14 +38,28 @@ public class SecondFragment extends Fragment {
             @Override
             public void onClick (View v){
                // Toast.makeText(getActivity(),"Text!",Toast.LENGTH_SHORT).show();
-                Place place = new Place();
+                Kid kid = new Kid();
                 EditText editText = (EditText) rootView.findViewById(textName);
                 EditText editAddress = (EditText) rootView.findViewById(textAddress);
-                place.setName(editText.getText().toString());
-                place.setAddress(editAddress.getText().toString());
+                kid.setName(editText.getText().toString());
+                kid.setLastName(editAddress.getText().toString());
 
-                Toast.makeText(getActivity(), place.getName()+" "+place.getAddress(),
-                        Toast.LENGTH_LONG).show();
+                try {
+                    //OrmLiteKidRepository.addKid(getActivity().getApplicationContext(), kid);
+                    OrmLiteKidRepository.addKid(getActivity(), kid);
+
+                    List<Kid> kidArrayList = OrmLiteKidRepository.findAll(getActivity());
+
+                    Toast.makeText(getActivity(), kidArrayList.get(0).getLastName(),
+                            Toast.LENGTH_LONG).show();
+                } catch (SQLException e) {
+                    Toast.makeText(getActivity(), e.getMessage(),
+                            Toast.LENGTH_LONG).show();
+                    e.printStackTrace();
+                }
+
+
+
             }
         });
 

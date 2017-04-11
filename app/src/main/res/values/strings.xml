@@ -1,11 +1,21 @@
 <resources>
-    <string name="app_name">HealthCare</string>
+    <string name="app_name">LiderAP</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
-    <string name="addPlace">Dodaj placówkę</string>
+    <string name="addKid">Dodaj dziecko</string>
+    <string name="name">Imie</string>
+    <string name="lastName">Nazwisko</string>
+    <string name="nameKid">Imie (np. Jana)</string>
+    <string name="lastNameKid">Nazwisko (np. Kowalskiego)</string>
+    <string name="proTip">Aby generacja przebiegła pomyślnie proszę dodać imię i nazwisko dziecka odmione np. Jana Kowalskiego!</string>
+
+    <string name="addSchoolCoordinator">Dodaj koordynatora szkolnego</string>
+    <string name="addCollege">Dodaj kolegium</string>
+    <string name="generate">Generuj oświadczenie</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

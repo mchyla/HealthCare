@@ -8,7 +8,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:text="Dodaj placówę"
+        android:text="@string/addKid"
         android:layout_alignParentEnd="true"
         android:textSize="60px"
         android:textStyle="bold"
@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:hint="Nazwa placówki"
+            android:hint="@string/nameKid"
             android:layout_alignParentTop="true"
             android:layout_alignParentStart="true"
             android:layout_marginTop="46dp"
@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:hint="Adres"
+            android:hint="@string/lastNameKid"
             android:layout_below="@+id/textName"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true" />
@@ -45,6 +45,18 @@
             android:layout_alignParentEnd="true"
             android:layout_below="@+id/textAddress" />
 
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:hint="@string/proTip"
+        android:editable="false"
+        android:layout_below="@+id/addPlaceButton"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:layout_alignParentEnd="true" />
 
 
 </RelativeLayout>
