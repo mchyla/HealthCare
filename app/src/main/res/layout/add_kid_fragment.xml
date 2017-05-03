@@ -25,6 +25,17 @@
             android:layout_marginTop="46dp"
             android:layout_alignParentEnd="true" />
 
+    <EditText
+        android:id="@+id/textNameChanged"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/nameKidChanged"
+        android:inputType="textPersonName"
+        android:layout_below="@+id/textName"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
         <EditText
             android:id="@+id/textLastName"
             android:layout_width="wrap_content"
@@ -32,9 +43,19 @@
             android:ems="10"
             android:inputType="textPersonName"
             android:hint="@string/lastNameKid"
-            android:layout_below="@+id/textName"
+            android:layout_below="@+id/textNameChanged"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true" />
+    <EditText
+        android:id="@+id/textLastNameChanged"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="@string/lastNameKidChanged"
+        android:layout_below="@+id/textLastName"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
 
     <EditText
         android:id="@+id/textCollege"
@@ -43,7 +64,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="@string/college"
-        android:layout_below="@+id/textLastName"
+        android:layout_below="@+id/textLastNameChanged"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true" />
 

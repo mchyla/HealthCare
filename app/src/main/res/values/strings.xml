@@ -9,9 +9,12 @@
     <string name="addKid">Dodaj dziecko</string>
     <string name="deletKid">Usuń</string>
     <string name="editKid">Edytuj</string>
-    <string name="nameKid">Imie (np. Jana)</string>
-    <string name="lastNameKid">Nazwisko (np. Kowalskiego)</string>
-    <string name="proTip">Aby generacja przebiegła pomyślnie proszę dodać imię i nazwisko dziecka odmione np. Jana Kowalskiego!</string>
+    <string name="nameKid">Imie (np. Jan)</string>
+    <string name="nameKidChanged">Imie (np. Jana)</string>
+    <string name="lastNameKidChanged">Nazwisko (np. Kowalskiego)</string>
+    <string name="lastNameKid">Nazwisko (np. Kowalski)</string>
+    <string name="proTip">Aby generacja przebiegła pomyślnie proszę podać imię i nazwisko dziecka odmione np. Jana Kowalskiego!</string>
+    <string name="proTip2">Aby generacja przebiegła pomyślnie proszę podać potrzebne parametry w formie takiej ja w podpowiedziach!</string>
     <string name="kidList">Zarządzanie dziećmi</string>
     <!--Universal-->
     <string name="name">Imie</string>
@@ -20,6 +23,34 @@
     <string name="cancel">Anuluj</string>
     <string name="email">E-Mail</string>
     <string name="fillAllField">Proszę uzupełnić wszystkie pola!</string>
+    <string name="register">Zarejestruj</string>
+    <string name="toRegister">Zarejestruj się</string>
+    <string name="pin">Pin</string>
+    <string name="confirmPin">Potwierdz pin</string>
+    <string name="success">Sukces!</string>
+    <string name="login">Zaloguj</string>
+    <string name="telephone">Telefon</string>
+    <string name="city">Miasto</string>
+    <string name="cityChanged">Miasto w odmianie (np. Rzeszowie)</string>
+    <string name="fillAllFields">Proszę uzupełnij wszystkie pola.</string>
+    <string name="wrongEmail">Proszę podać poprawny email.</string>
+    <string name="pin2pinWrong">Piny się nie zgadzają.</string>
+
+    <!-- EVENT -->
+    <string name="addEvent">Nowy event</string>
+    <string name="inTime">W godzinach: </string>
+    <string name="hours">16:30 - 18:30</string>
+    <string name="inBuilding">W budynku: </string>
+    <string name="building">Instytutu Muzyki UR</string>
+    <string name="atRoute">Na ulicy: </string>
+    <string name="route">gen. Jarosława Dąbrowskiego 83</string>
+    <string name="eventDate">01.01.2017</string>
+    <string name="eventDateS">W dniu: </string>
+    <string name="shoolLeave">Wyjście sprzed szkoły: </string>
+    <string name="shoolReturn">Planowany powrót: </string>
+    <string name="shoolLeaveHour">16:00</string>
+    <string name="shoolReturnHour">18:00</string>
+
 
     <string name="college">Kolegium</string>
 

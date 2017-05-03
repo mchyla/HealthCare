@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/headTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:text="@string/toRegister"
+        android:textSize="60px"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/textLeaderName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/headTextView"
+        android:ems="10"
+        android:hint="@string/name"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/textLeaderLastName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textLeaderName"
+        android:ems="10"
+        android:hint="@string/lastName"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/textLeaderEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textLeaderLastName"
+        android:ems="10"
+        android:hint="@string/email"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/textLeaderCity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textLeaderEmail"
+        android:ems="10"
+        android:hint="@string/city"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/textLeaderCityChanged"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textLeaderCity"
+        android:ems="10"
+        android:hint="@string/cityChanged"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/textLeaderCollege"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textLeaderCityChanged"
+        android:ems="10"
+        android:hint="@string/college"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/textLeaderTelephone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textLeaderCollege"
+        android:ems="10"
+        android:hint="@string/telephone"
+        android:inputType="numberPassword" />
+
+    <EditText
+        android:id="@+id/textLeaderPin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textLeaderTelephone"
+        android:ems="10"
+        android:hint="@string/pin"
+        android:inputType="numberPassword" />
+
+    <EditText
+        android:id="@+id/textLeaderConfirmPin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textLeaderPin"
+        android:ems="10"
+        android:hint="@string/confirmPin"
+        android:inputType="numberPassword" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="1.0dip"
+        android:paddingLeft="4.0dip"
+        android:paddingRight="4.0dip"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="17dp">
+
+        <Button
+            android:id="@+id/addSchoolCoordinatorButton"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:text="@string/confirm" />
+
+        <Button
+            android:id="@+id/cancelAddCoordinatorButton"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:text="@string/cancel" />
+
+    </LinearLayout>
+
+</RelativeLayout>

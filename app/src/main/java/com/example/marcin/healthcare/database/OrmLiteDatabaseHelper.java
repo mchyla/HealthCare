@@ -14,6 +14,7 @@ import android.util.Log;
 import com.example.marcin.healthcare.model.College;
 import com.example.marcin.healthcare.model.Kid;
 import com.example.marcin.healthcare.model.Leader;
+import com.example.marcin.healthcare.model.Pin;
 import com.example.marcin.healthcare.model.SchoolCoordinator;
 import com.example.marcin.healthcare.model.Volunteer;
 import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
@@ -37,7 +38,7 @@ public class OrmLiteDatabaseHelper extends OrmLiteSqliteOpenHelper {
     private static OrmLiteDatabaseHelper instance;
 
     private static final String DATABASE_NAME = "helloAndroidTest.db";
-    private static final int DATABASE_VERSION = 9;
+    private static final int DATABASE_VERSION = 15;
 
     // the DAO object we use to access the SimpleData table
     private Dao<Leader, Integer> simpleDao = null;
@@ -51,6 +52,9 @@ public class OrmLiteDatabaseHelper extends OrmLiteSqliteOpenHelper {
 
     private Dao<Kid, Integer> kidDao = null;
     private RuntimeExceptionDao<Kid, Integer> kidDaoR = null;
+
+    private Dao<Pin, Integer> pinDao = null;
+    private RuntimeExceptionDao<Pin, Integer> pinDaoR = null;
 
 
     public OrmLiteDatabaseHelper(Context context) {
@@ -71,12 +75,13 @@ public class OrmLiteDatabaseHelper extends OrmLiteSqliteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase database, ConnectionSource connectionSource) {
         try {
-            Log.i(OrmLiteDatabaseHelper.class.getName(), "onCreate!!!!!!!!!!!!!!!!!!!!!!");
+            Log.i(OrmLiteDatabaseHelper.class.getName(), "DatabaseHelper - on create");
             TableUtils.createTableIfNotExists(connectionSource, Leader.class);
             TableUtils.createTableIfNotExists(connectionSource, SchoolCoordinator.class);
             TableUtils.createTableIfNotExists(connectionSource, Volunteer.class);
             TableUtils.createTableIfNotExists(connectionSource, Kid.class);
             TableUtils.createTableIfNotExists(connectionSource, College.class);
+            TableUtils.createTableIfNotExists(connectionSource, Pin.class);
         } catch (java.sql.SQLException e) {
             e.printStackTrace();
         }
@@ -94,18 +99,21 @@ public class OrmLiteDatabaseHelper extends OrmLiteSqliteOpenHelper {
     private void recreateTables() {
         try {
 
-            Log.i(OrmLiteDatabaseHelper.class.getName(), "onUPDATE !!!!!!!!!!!!!!!!!!!!!!");
+            Log.i(OrmLiteDatabaseHelper.class.getName(), "DatabaseHelper - onUpdate");
             TableUtils.dropTable(connectionSource, Kid.class, true);
             TableUtils.dropTable(connectionSource, Volunteer.class, true);
             TableUtils.dropTable(connectionSource, SchoolCoordinator.class, true);
             TableUtils.dropTable(connectionSource, College.class, true);
             TableUtils.dropTable(connectionSource, Leader.class, true);
+            TableUtils.dropTable(connectionSource, Pin.class, true);
+
 
             TableUtils.createTableIfNotExists(connectionSource, Leader.class);
             TableUtils.createTableIfNotExists(connectionSource, SchoolCoordinator.class);
             TableUtils.createTableIfNotExists(connectionSource, Volunteer.class);
             TableUtils.createTableIfNotExists(connectionSource, Kid.class);
             TableUtils.createTableIfNotExists(connectionSource, College.class);
+            TableUtils.createTableIfNotExists(connectionSource, Pin.class);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -134,6 +142,13 @@ public class OrmLiteDatabaseHelper extends OrmLiteSqliteOpenHelper {
             schoolCoordinatorDao = getDao(SchoolCoordinator.class);
         }
         return schoolCoordinatorDao;
+    }
+
+    public Dao<Pin, Integer> getPinDao() throws SQLException{
+        if(pinDao == null){
+            pinDao = getDao(Pin.class);
+        }
+        return pinDao;
     }
 
 /*    public Dao<Kid, Integer> getKidDao() throws SQLException {
@@ -174,6 +189,14 @@ public class OrmLiteDatabaseHelper extends OrmLiteSqliteOpenHelper {
             kidDaoR = getRuntimeExceptionDao(Kid.class);
         }
         return kidDaoR;
+    }
+
+    public RuntimeExceptionDao<Pin, Integer> getPinDaoR() throws SQLException {
+        if(pinDaoR == null) {
+            pinDaoR = getRuntimeExceptionDao(Pin.class);
+        }
+
+        return pinDaoR;
     }
 
 

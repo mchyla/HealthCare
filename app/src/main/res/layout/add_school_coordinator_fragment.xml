@@ -16,7 +16,7 @@
         android:textStyle="bold"
         android:gravity="center"/>
     <EditText
-        android:id="@+id/textName"
+        android:id="@+id/textHours"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -33,7 +33,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="@string/lastName"
-        android:layout_below="@+id/textName"
+        android:layout_below="@+id/textHours"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true" />
 
@@ -67,8 +67,8 @@
         android:paddingBottom="1.0dip"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="135dp"
-        android:layout_below="@+id/textLastName"
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/textCollege"
         android:layout_alignParentStart="true">
 
         <Button

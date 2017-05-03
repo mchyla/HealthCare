@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/addEvent"
+        android:layout_alignParentEnd="true"
+        android:textSize="60px"
+        android:textStyle="bold"
+        android:gravity="center"/>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutBuilding"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_below="@+id/textView3"
+        android:weightSum="1">
+        <TextView
+            android:id="@+id/textInBuilding"
+            android:layout_width="117dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textLastName"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/textHours"
+            android:layout_toStartOf="@+id/textHours"
+            android:ems="10"
+            android:text="@string/inBuilding"
+            android:textSize="15dp"
+            android:textAlignment="viewEnd"
+            android:layout_weight="0.46" />
+        <EditText
+            android:id="@+id/textBuilding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="15"
+            android:inputType="textPersonName"
+            android:hint="@string/building"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_weight="0.5" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutHours"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_below="@+id/linearLayoutBuilding"
+        android:weightSum="1">
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="117dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textLastName"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/textHours"
+            android:layout_toStartOf="@+id/textHours"
+            android:ems="10"
+            android:text="@string/inTime"
+            android:textSize="15dp"
+            android:textAlignment="viewEnd"
+            android:layout_weight="0.46" />
+    <EditText
+        android:id="@+id/textHours"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="15"
+        android:inputType="textPersonName"
+        android:hint="@string/hours"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_weight="0.5" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutRoute"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_below="@+id/linearLayoutHours"
+        android:weightSum="1">
+        <TextView
+            android:id="@+id/textAtRoute"
+            android:layout_width="117dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textLastName"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/textHours"
+            android:layout_toStartOf="@+id/textHours"
+            android:ems="10"
+            android:text="@string/atRoute"
+            android:textSize="15dp"
+            android:textAlignment="viewEnd"
+            android:layout_weight="0.46" />
+        <EditText
+            android:id="@+id/textRoute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="18"
+            android:inputType="textPersonName"
+            android:hint="@string/route"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_weight="0.5" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutEventDate"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_below="@+id/linearLayoutRoute"
+        android:weightSum="1">
+        <TextView
+            android:id="@+id/textEDate"
+            android:layout_width="117dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textLastName"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/textHours"
+            android:layout_toStartOf="@+id/textHours"
+            android:ems="10"
+            android:text="@string/eventDateS"
+            android:textSize="15dp"
+            android:textAlignment="viewEnd"
+            android:layout_weight="0.46" />
+        <EditText
+            android:id="@+id/textEventDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="18"
+            android:inputType="date"
+            android:hint="@string/eventDate"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_weight="0.5" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutStartHour"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_below="@+id/linearLayoutEventDate"
+        android:weightSum="1">
+        <TextView
+            android:id="@+id/textStartHour"
+            android:layout_width="117dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textLastName"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/textHours"
+            android:layout_toStartOf="@+id/textHours"
+            android:ems="1"
+            android:text="@string/shoolLeave"
+            android:textSize="15dp"
+            android:textAlignment="viewEnd"
+            android:layout_weight="0.5" />
+        <EditText
+            android:id="@+id/textStartHoursInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="8"
+            android:inputType="time"
+            android:hint="@string/shoolLeaveHour"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_weight="0.5" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutEndHour"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_below="@+id/linearLayoutStartHour"
+        android:weightSum="1">
+        <TextView
+            android:id="@+id/textEndHour"
+            android:layout_width="117dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textLastName"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/textHours"
+            android:layout_toStartOf="@+id/textHours"
+            android:ems="1"
+            android:text="@string/shoolReturn"
+            android:textSize="15dp"
+            android:textAlignment="viewEnd"
+            android:layout_weight="0.5" />
+        <EditText
+            android:id="@+id/textEndHoursInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="8"
+            android:inputType="time"
+            android:hint="@string/shoolReturnHour"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_weight="0.5" />
+
+    </LinearLayout>
+
+ <LinearLayout
+        android:orientation="horizontal"
+        android:paddingLeft="4.0dip"
+        android:paddingTop="5.0dip"
+        android:paddingRight="4.0dip"
+        android:paddingBottom="1.0dip"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:id="@+id/linearLayout"
+        android:layout_below="@+id/linearLayoutEndHour"
+        android:layout_alignParentStart="true">
+
+        <Button
+            android:id="@+id/generateEvent"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:text="@string/confirm"
+            android:layout_weight="1.0" />
+
+        <Button
+            android:id="@+id/canceAddKidButton"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:text="@string/cancel"
+            android:layout_weight="1.0" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/proTip2"
+        android:editable="false"
+        android:layout_marginTop="34dp"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:layout_below="@+id/linearLayout"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>

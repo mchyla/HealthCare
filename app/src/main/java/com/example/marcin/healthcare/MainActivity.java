@@ -1,9 +1,14 @@
 package com.example.marcin.healthcare;
 
+import android.Manifest;
+import android.app.Activity;
 import android.app.FragmentManager;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,11 +19,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.marcin.healthcare.fragments.EventFragment;
 import com.example.marcin.healthcare.fragments.KidManagementFragment;
 import com.example.marcin.healthcare.fragments.MainFragment;
-import com.example.marcin.healthcare.fragments.AddKidFragment;
-import com.example.marcin.healthcare.fragments.AddSchoolCoordinatorFragment;
 import com.example.marcin.healthcare.fragments.SCManagementFragment;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
+
+import java.io.File;
+import java.io.FileOutputStream;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -102,7 +112,9 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_kids_list) {
             fm.beginTransaction().replace(R.id.content_frame, new KidManagementFragment()).addToBackStack("fragBack").commit();
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_generate) {
+
+            fm.beginTransaction().replace(R.id.content_frame, new EventFragment()).addToBackStack("fragBack").commit();
 
         } else if (id == R.id.nav_send) {
 
@@ -113,6 +125,35 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
+
+ public File getFile(){
+     File file = new File(this.getFilesDir() + "/zgodatemplate.docx");
+     Log.e("TRYIN !!!! ",this.getFilesDir() + "/zgodatemplate.docx");
+/*     try {
+         InputStream inputStream = getResources().openRawResource(R.raw.zgodatemplate);
+         FileOutputStream fileOutputStream = new FileOutputStream(file);
+
+         byte buf[]=new byte[1024];
+         int len;
+         while((len=inputStream.read(buf))>0) {
+             fileOutputStream.write(buf,0,len);
+         }
+
+         fileOutputStream.close();
+         inputStream.close();
+
+     } catch (IOException e1) {
+         e1.printStackTrace();
+     }*/
+     return file;
+ }
+
+    public File get2File(){
+        File file = new File(this.getFilesDir() + "/zgodatemplate2.docx");
+        Log.e("TRYIN !!!! ",this.getFilesDir() + "/zgodatemplate2.docx");
+
+        return file;
+    }
 
 
 }

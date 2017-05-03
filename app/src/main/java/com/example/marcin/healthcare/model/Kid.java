@@ -8,8 +8,6 @@ import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.field.ForeignCollectionField;
 import com.j256.ormlite.table.DatabaseTable;
 
-import org.xlsx4j.sml.Col;
-
 import java.io.Serializable;
 
 /**
@@ -20,45 +18,30 @@ public class Kid implements Serializable{
 
 
     @DatabaseField(generatedId = true)
-    int id;
+    private int id;
     @DatabaseField
-    String name;
+    private String name;
     @DatabaseField
-    String lastName;
+    private String nameChanged;
     @DatabaseField
-    String college;
+    private String lastName;
+    @DatabaseField
+    private String lastNameChanged;
+    @DatabaseField
+    private String college;
     //@ForeignCollectionField
     //ForeignCollection<College> college;
 
 
-    public Kid(String name, String lastName, String college) {
+    public Kid(String name, String nameChanged, String lastName, String lastNameChanged, String college) {
         this.name = name;
+        this.nameChanged = nameChanged;
         this.lastName = lastName;
+        this.lastNameChanged = lastNameChanged;
         this.college = college;
     }
 
-    public Kid(String name, String lastName) {
-        this.name = name;
-        this.lastName = lastName;
-    }
-
     public Kid() {
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
     }
 
     public int getId() {
@@ -69,20 +52,43 @@ public class Kid implements Serializable{
         this.id = id;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getNameChanged() {
+        return nameChanged;
+    }
+
+    public void setNameChanged(String nameChanged) {
+        this.nameChanged = nameChanged;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getLastNameChanged() {
+        return lastNameChanged;
+    }
+
+    public void setLastNameChanged(String lastNameChanged) {
+        this.lastNameChanged = lastNameChanged;
+    }
+
     public String getCollege() {
         return college;
     }
 
     public void setCollege(String college) {
         this.college = college;
-    }
-
-    @Override
-    public String toString() {
-        return "Kid{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", lastName='" + lastName + '\'' +
-                '}';
     }
 }

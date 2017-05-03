@@ -14,7 +14,11 @@ dependencies {
     compile 'com.android.support:support-v4:25.3.1'
 
     // https://mvnrepository.com/artifact/org.docx4j/docx4j
-    compile group: 'org.docx4j', name: 'docx4j', version: '3.3.3'
+    //compile group: 'org.docx4j', name: 'docx4j', version: '3.3.3'
+// https://mvnrepository.com/artifact/com.itextpdf/itextpdf
+    compile group: 'com.itextpdf', name: 'itextpdf', version: '5.5.10'
+
+
 
     //compile files('raw/docx4j.jar')
     testCompile 'junit:junit:4.12'

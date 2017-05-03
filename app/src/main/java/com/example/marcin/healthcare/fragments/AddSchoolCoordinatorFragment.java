@@ -13,19 +13,15 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.marcin.healthcare.R;
-import com.example.marcin.healthcare.model.Kid;
 import com.example.marcin.healthcare.model.SchoolCoordinator;
-import com.example.marcin.healthcare.repository.OrmLiteKidRepository;
 import com.example.marcin.healthcare.repository.SchoolCoordinatorRepository;
 
 import java.sql.SQLException;
 
-import static com.example.marcin.healthcare.R.id.text;
 import static com.example.marcin.healthcare.R.id.textCollege;
 import static com.example.marcin.healthcare.R.id.textEmail;
 import static com.example.marcin.healthcare.R.id.textLastName;
-import static com.example.marcin.healthcare.R.id.textName;
-import static com.example.marcin.healthcare.R.id.txtCollege;
+import static com.example.marcin.healthcare.R.id.textHours;
 
 /**
  * Created by mchyl on 11/04/2017.
@@ -46,7 +42,7 @@ public class AddSchoolCoordinatorFragment extends Fragment {
         final View rootView = inflater.inflate(R.layout.add_school_coordinator_fragment, container, false);
         Button addSCButton = (Button) rootView.findViewById(R.id.addSchoolCoordinatorButton);
 
-        txtName = (EditText) rootView.findViewById(textName);
+        txtName = (EditText) rootView.findViewById(textHours);
         txtLastName = (EditText) rootView.findViewById(textLastName);
         txtEmail = (EditText) rootView.findViewById(textEmail);
         txtCollege = (EditText) rootView.findViewById(textCollege);
