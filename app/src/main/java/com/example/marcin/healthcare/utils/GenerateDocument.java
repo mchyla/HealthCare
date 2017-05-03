@@ -119,7 +119,7 @@ public class GenerateDocument {
 
             PdfPTable title = new PdfPTable(1);
             title.setWidthPercentage(100);
-            Phrase titleText = new Phrase("ZGODA  RODZICA, (OPIEKUNA PRAWNEGO)\n" +
+            Phrase titleText = new Phrase("ZGODA RODZICA, (OPIEKUNA PRAWNEGO)\n" +
                     "NA UDZIAŁ DZIECKA W WYDARZENIU ZORGANIZOWANYM PRZEZ AKADEMIĘ PRZYSZŁOŚCI\n", times10);
             PdfPCell titleCell = new PdfPCell(titleText);
             titleCell.setBorder(Rectangle.NO_BORDER);
@@ -129,8 +129,8 @@ public class GenerateDocument {
 
             Phrase kidText = new Phrase("Wyrażam zgodę na udział mojego dziecka "
                     + listOfKids.get(i).getNameChanged() + " " + listOfKids.get(i).getLastNameChanged()
-                    + " w wydarzeniu, które odbędzie się \nw budynku "
-                    + building + " na ulicy " + route + " w " + city + " w dniu "
+                    + "w wydarzeniu, \nktóre odbędzie się w budynku "
+                    + building + " na ulicy " + route + "\nw " + city + " w dniu "
                     + eventDate + " roku w godzinach " + hours + ".", times10);
 
             PdfPTable body = new PdfPTable(1);
@@ -140,7 +140,7 @@ public class GenerateDocument {
             body.addCell(bodyCell);
             document.add(body);
 
-            if (eventStart != "" && eventEnd != "") {
+            if (eventStart.length() > 0 && eventEnd.length() > 0) {
                 PdfPTable eventStartEnd = new PdfPTable(1);
                 Phrase eventStartEndText = new Phrase("Wyjście sprzed szkoły nastąpi o godzinie " + eventStart
                         + ". Powrót planowany jest na godzinę " + eventEnd + ".\n"
@@ -155,8 +155,8 @@ public class GenerateDocument {
 
             PdfPTable permission = new PdfPTable(1);
             Phrase permissionText = new Phrase("Wyrażam zgodę na samodzielny powrót " +
-                    "dziecka do domu  / odebranie go przez osobę dorosłą*.\n"
-                    + "Za szkody wynikające  z nieprzestrzegania regulaminu wyjść, " +
+                    "dziecka do domu / odebranie go przez osobę dorosłą*.\n"
+                    + "Za szkody wynikające z nieprzestrzegania regulaminu wyjść, " +
                     "AKADEMIA PRZYSZŁOŚCI odpowiada rodzic.", times10);
             PdfPCell permissionCell = new PdfPCell(permissionText);
             permissionCell.setHorizontalAlignment(Element.ALIGN_LEFT);

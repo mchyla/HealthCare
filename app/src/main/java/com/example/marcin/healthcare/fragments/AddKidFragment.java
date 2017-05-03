@@ -45,14 +45,14 @@ public class AddKidFragment extends Fragment {
         setHasOptionsMenu(true);
         Button addPlaceButton = (Button) rootView.findViewById(R.id.addKidButton);
 
-        FloatingActionButton fab = (FloatingActionButton) rootView.findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Add kid", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        //FloatingActionButton fab = (FloatingActionButton) rootView.findViewById(R.id.fab);
+        //fab.setOnClickListener(new View.OnClickListener() {
+        //    @Override
+        //    public void onClick(View view) {
+        //        Snackbar.make(view, "Add kid", Snackbar.LENGTH_LONG)
+        //                .setAction("Action", null).show();
+        //    }
+        //});
 
         Bundle bundle = getArguments();
         //Kid division= (Kid) bundle.getSerializable("kidToEdit");

@@ -33,7 +33,7 @@
 
     <TextView
         android:id="@+id/placeholder"
-        android:layout_width="10dp"
+        android:layout_width="5dp"
         android:layout_height="wrap_content"
         android:layout_weight="0.58"
         android:editable="false"
@@ -42,21 +42,22 @@
 
     <Button
         android:id="@+id/buttonEdit"
-        android:layout_width="5dp"
-        android:layout_height="15dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_weight="0.93"
+        android:paddingRight="10dp"
         android:background="@android:color/transparent"
         android:text="@string/editKid"
-        android:textSize="10dp" />
+        android:textSize="13dp" />
 
     <Button
         android:id="@+id/buttonDelete"
-        android:layout_width="5dp"
-        android:layout_height="15dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_weight="0.64"
         android:background="@android:color/transparent"
         android:text="@string/deletKid"
-        android:textSize="10dp" />
+        android:textSize="13dp" />
 
     <!--<Button
         android:id="@+id/button2"

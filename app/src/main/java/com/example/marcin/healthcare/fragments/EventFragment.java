@@ -22,6 +22,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import static com.example.marcin.healthcare.R.id.text;
 import static com.example.marcin.healthcare.R.id.textBuilding;
 import static com.example.marcin.healthcare.R.id.textLastName;
 
@@ -68,12 +69,22 @@ public class EventFragment extends Fragment {
             public void onClick(View v) {
 
                 try {
-                    GenerateDocument.genrateDocument(getContext(), building.getText().toString(),
-                            leader.getCityChanged(), route.getText().toString()
-                            , textHours.getText().toString(), eventDate.getText().toString(),
-                            startHour.getText().toString(), endHour.getText().toString(),
-                            leader.getCollage(), leader.getPhone());
 
+                    if (building.getText().length() == 0) {
+                        building.setError("Wydarzenie musi się gdzieś odbyć.");
+                    } else if (route.getText().length() == 0) {
+                        route.setError("Podaj adres.");
+                    } else if (textHours.getText().length() == 0) {
+                        textHours.setError("W jakim czasie odbędzie się wydarzenie?");
+                    } else if (eventDate.getText().length() == 0){
+                        eventDate.setError("W jaki dzień odbędzie się wydarzenie?");
+                    } else {
+                        GenerateDocument.genrateDocument(getContext(), building.getText().toString(),
+                                leader.getCityChanged(), route.getText().toString(),
+                                textHours.getText().toString(), eventDate.getText().toString(),
+                                startHour.getText().toString(), endHour.getText().toString(),
+                                leader.getCollage(), leader.getPhone());
+                    }
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 } catch (DocumentException e) {
@@ -89,9 +100,6 @@ public class EventFragment extends Fragment {
 
         return rootView;
     }
-
-
-
 
 
 }

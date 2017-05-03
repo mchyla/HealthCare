@@ -70,6 +70,7 @@ public class RegisterActivity extends AppCompatActivity {
                             leader.setPin(Integer.valueOf(pin));
                             leader.setPhone(phone);
                             leader.setCity(city);
+                            leader.setCityChanged(cityChanged);
                             leader.setCollage(collage);
 
                             try {

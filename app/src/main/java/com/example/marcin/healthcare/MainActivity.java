@@ -41,14 +41,14 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        //FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        //fab.setOnClickListener(new View.OnClickListener() {
+        //    @Override
+        //    public void onClick(View view) {
+        //        Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+        //                .setAction("Action", null).show();
+        //    }
+        //});
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -89,7 +89,6 @@ public class MainActivity extends AppCompatActivity
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
@@ -103,19 +102,12 @@ public class MainActivity extends AppCompatActivity
         FragmentManager fm = getFragmentManager();
         int id = item.getItemId();
 
-        /*if (id == R.id.nav_add_kid) {
-            fm.beginTransaction().replace(R.id.content_frame, new AddKidFragment()).addToBackStack("fragBack").commit();
-
-        } else*/ if (id == R.id.nav_sc_list) {
+        if (id == R.id.nav_sc_list) {
             fm.beginTransaction().replace(R.id.content_frame, new SCManagementFragment()).addToBackStack("fragBack").commit();
-       /* } else if (id == R.id.nav_add_place) {*/
-
         } else if (id == R.id.nav_kids_list) {
             fm.beginTransaction().replace(R.id.content_frame, new KidManagementFragment()).addToBackStack("fragBack").commit();
         } else if (id == R.id.nav_generate) {
-
             fm.beginTransaction().replace(R.id.content_frame, new EventFragment()).addToBackStack("fragBack").commit();
-
         } else if (id == R.id.nav_send) {
 
         }
@@ -124,36 +116,4 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
-
- public File getFile(){
-     File file = new File(this.getFilesDir() + "/zgodatemplate.docx");
-     Log.e("TRYIN !!!! ",this.getFilesDir() + "/zgodatemplate.docx");
-/*     try {
-         InputStream inputStream = getResources().openRawResource(R.raw.zgodatemplate);
-         FileOutputStream fileOutputStream = new FileOutputStream(file);
-
-         byte buf[]=new byte[1024];
-         int len;
-         while((len=inputStream.read(buf))>0) {
-             fileOutputStream.write(buf,0,len);
-         }
-
-         fileOutputStream.close();
-         inputStream.close();
-
-     } catch (IOException e1) {
-         e1.printStackTrace();
-     }*/
-     return file;
- }
-
-    public File get2File(){
-        File file = new File(this.getFilesDir() + "/zgodatemplate2.docx");
-        Log.e("TRYIN !!!! ",this.getFilesDir() + "/zgodatemplate2.docx");
-
-        return file;
-    }
-
-
 }
