@@ -55,13 +55,27 @@ public class RegisterActivity extends AppCompatActivity {
                 String cityChanged = cityChangedTextView.getText().toString();
                 String collage = collageTextView.getText().toString();
 
-                if(name.equals("") || lastName.equals("") || email.equals("") || pin.equals("") || confirmPin.equals("") ||
-                        phone.equals("") || city.equals("") || cityChanged.equals("") || collage.equals("")){
-                    Toast.makeText(getApplicationContext(), R.string.fillAllFields,
-                            Toast.LENGTH_LONG).show();
-                } else {
-                    if(email.contains("@") && email.contains(".")){
-                        if(pin.equals(confirmPin)){
+                if(name.length() == 0){
+                    nameTextView.setError("Imie jest wymagane.");
+                } else if (lastName.length() == 0) {
+                    lastNameTextView.setError("Nazwisko jest wymagane.");
+                } else if (email.length() == 0) {
+                    emailTextView.setError("Email jest wymagany.");
+                } else if (phone.length() == 0) {
+                    phoneTextView.setError("Telefon jest wymagany.");
+                } else if (city.length() == 0) {
+                    cityTextView.setError("Miasto jest wymagane.");
+                } else if (cityChanged.length() == 0) {
+                    cityChangedTextView.setError("Odmiana nazwy miasta jest wymagana.");
+                } else if (collage.length() == 0) {
+                    collageTextView.setError("Numer kolegium jest wymagany.");
+                } else if (pin.length() == 0) {
+                    pinTextView.setError("Pin jest wymagany.");
+                } else if (confirmPin.length() == 0) {
+                    confirmPinTextView.setError("Potwierdzenie pinu jest wymagane.");
+                }  else {
+                    if (email.contains("@") && email.contains(".")) {
+                        if (pin.equals(confirmPin)) {
 
                             Leader leader = new Leader();
                             leader.setName(name);
@@ -83,8 +97,14 @@ public class RegisterActivity extends AppCompatActivity {
                                 Toast.makeText(getApplicationContext(), e.getMessage(),
                                         Toast.LENGTH_LONG).show();
                             }
+                        } else {
+                            pinTextView.setError("Pin niepoprawnie potwierdzony.");
+                            confirmPinTextView.setError("Pin niepoprawnie potwierdzony.");
                         }
+                    } else {
+                        emailTextView.setError("Proszę podać poprawny email.");
                     }
+
                 }
 
                // startActivity(new Intent(RegisterActivity.this, StartActivity.class));

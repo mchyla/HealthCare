@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -46,6 +47,7 @@ public class AddSchoolCoordinatorFragment extends Fragment {
         txtLastName = (EditText) rootView.findViewById(textLastName);
         txtEmail = (EditText) rootView.findViewById(textEmail);
         txtCollege = (EditText) rootView.findViewById(textCollege);
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Dodaj KS'a");
 
         Bundle bundle = getArguments();
         //Kid division= (Kid) bundle.getSerializable("kidToEdit");

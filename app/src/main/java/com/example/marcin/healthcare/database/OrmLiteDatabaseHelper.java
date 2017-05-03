@@ -38,7 +38,7 @@ public class OrmLiteDatabaseHelper extends OrmLiteSqliteOpenHelper {
     private static OrmLiteDatabaseHelper instance;
 
     private static final String DATABASE_NAME = "helloAndroidTest.db";
-    private static final int DATABASE_VERSION = 17;
+    private static final int DATABASE_VERSION = 19;
 
     // the DAO object we use to access the SimpleData table
     private Dao<Leader, Integer> simpleDao = null;

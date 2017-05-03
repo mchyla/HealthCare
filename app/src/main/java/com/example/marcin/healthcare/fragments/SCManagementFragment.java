@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -41,6 +42,7 @@ public class SCManagementFragment extends Fragment {
         final View rootView = inflater.inflate(R.layout.kid_management_fragment, container, false);
         lv = (ListView) rootView.findViewById(R.id.kidListView);
         setHasOptionsMenu(true);
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Koordynatorzy Szkolni");
         return rootView;
     }
 
