@@ -1,5 +1,6 @@
 package com.example.marcin.liderap;
 
+import android.app.DialogFragment;
 import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -10,11 +11,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
+import com.example.marcin.liderap.fragments.DatePickerFragment;
+import com.example.marcin.liderap.fragments.EndEventTimePickerFragment;
 import com.example.marcin.liderap.fragments.EventFragment;
 import com.example.marcin.liderap.fragments.KidManagementFragment;
 import com.example.marcin.liderap.fragments.MainFragment;
+import com.example.marcin.liderap.fragments.MeetingEndTimePickerFragment;
+import com.example.marcin.liderap.fragments.MeetingStartTimePickerFragment;
 import com.example.marcin.liderap.fragments.SCManagementFragment;
+import com.example.marcin.liderap.fragments.StartEventTimePickerFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -101,5 +108,30 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void showDatePickerDialog(View v) {
+        DialogFragment newFragment = new DatePickerFragment();
+        newFragment.show(getFragmentManager(), "datePicker");
+    }
+
+    public void showEventStartTimePickerDialog(View v) {
+        DialogFragment newFragment = new StartEventTimePickerFragment();
+        newFragment.show(getFragmentManager(), "timePicker");
+    }
+
+    public void showEventEndTimePickerDialog(View v) {
+        DialogFragment newFragment = new EndEventTimePickerFragment();
+        newFragment.show(getFragmentManager(), "timePicker");
+    }
+
+    public void showMeetingStartTimePickerDialog(View v) {
+        DialogFragment newFragment = new MeetingStartTimePickerFragment();
+        newFragment.show(getFragmentManager(), "timePicker");
+    }
+
+    public void showMeetingEndTimePickerDialog(View v) {
+        DialogFragment newFragment = new MeetingEndTimePickerFragment();
+        newFragment.show(getFragmentManager(), "timePicker");
     }
 }

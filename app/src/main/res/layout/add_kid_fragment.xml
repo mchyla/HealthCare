@@ -98,14 +98,18 @@
             android:layout_width="0.0dip"
             android:layout_height="fill_parent"
             android:text="@string/confirm"
-            android:layout_weight="1.0" />
+            android:layout_weight="1.0"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:backgroundTint="@color/colorPrimary"/>
 
         <Button
             android:id="@+id/canceAddKidButton"
             android:layout_width="0.0dip"
             android:layout_height="fill_parent"
             android:text="@string/cancel"
-            android:layout_weight="1.0" />
+            android:layout_weight="1.0"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:backgroundTint="@color/colorAccent"/>
 
     </LinearLayout>
 

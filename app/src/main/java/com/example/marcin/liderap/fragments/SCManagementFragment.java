@@ -51,7 +51,7 @@ public class SCManagementFragment extends Fragment {
             e.printStackTrace();
         }
         super.onActivityCreated(savedInstanceState);
-        SCAdapter adapter = new SCAdapter(getContext(),
+        SCAdapter adapter = new SCAdapter(getActivity(),
                 R.layout.listitem,
                 schoolCoordinatorArrayList);
         lv.setAdapter(adapter);

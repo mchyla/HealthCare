@@ -66,112 +66,113 @@ public class GenerateDocument {
         }
 
 
-        document.open();
-        String pathF = "/system/fonts/DroidSans.ttf";
-        File file = new File(pathF);
-        File ff[] = file.listFiles();
+        try {
+            document.open();
+            String pathF = "/system/fonts/DroidSans.ttf";
+            File file = new File(pathF);
+            File ff[] = file.listFiles();
 
-        BaseFont timesRoman = BaseFont.createFont(pathF, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
-        com.itextpdf.text.Font times12 = new com.itextpdf.text.Font(timesRoman, 12);
-        Font times12Bold = new Font(timesRoman, 12, Font.BOLD);
-        com.itextpdf.text.Font times10 = new com.itextpdf.text.Font(timesRoman, 10);
-        Font times10Bold = new Font(timesRoman, 10, Font.BOLD);
+            BaseFont timesRoman = BaseFont.createFont(pathF, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+            com.itextpdf.text.Font times12 = new com.itextpdf.text.Font(timesRoman, 12);
+            Font times12Bold = new Font(timesRoman, 12, Font.BOLD);
+            com.itextpdf.text.Font times10 = new com.itextpdf.text.Font(timesRoman, 10);
+            Font times10Bold = new Font(timesRoman, 10, Font.BOLD);
 
-        //Chunk glue = new Chunk(new VerticalPositionMark());
+            //Chunk glue = new Chunk(new VerticalPositionMark());
 
-        Date date = new Date();
-        SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
-        String strDate = sdf.format(date);
-        List<Kid> listOfKids = OrmLiteKidRepository.findAll(context);
+            Date date = new Date();
+            SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
+            String strDate = sdf.format(date);
+            List<Kid> listOfKids = OrmLiteKidRepository.findAll(context);
 
-        for (int i = 0; i < listOfKids.size(); i++) {
+            for (int i = 0; i < listOfKids.size(); i++) {
 
-            PdfPTable head = new PdfPTable(3);
-            head.setWidthPercentage(100);
+                PdfPTable head = new PdfPTable(3);
+                head.setWidthPercentage(100);
 
-            PdfPCell nullCell = new PdfPCell();
-            nullCell.setBorder(Rectangle.NO_BORDER);
-            head.addCell(nullCell);
-            Phrase oswtext = new Phrase("Oświadczenie", times12);
-            //oswtext.setFont(times12);
-            PdfPCell oswCell = new PdfPCell(oswtext);
-            oswCell.setBorder(Rectangle.NO_BORDER);
-            oswCell.setHorizontalAlignment(Element.ALIGN_CENTER);
-            head.addCell(oswCell);
+                PdfPCell nullCell = new PdfPCell();
+                nullCell.setBorder(Rectangle.NO_BORDER);
+                head.addCell(nullCell);
+                Phrase oswtext = new Phrase("Oświadczenie", times12);
+                //oswtext.setFont(times12);
+                PdfPCell oswCell = new PdfPCell(oswtext);
+                oswCell.setBorder(Rectangle.NO_BORDER);
+                oswCell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                head.addCell(oswCell);
 
-            PdfPCell dateCell = new PdfPCell(new Phrase(strDate, times10));
-            dateCell.setBorder(Rectangle.NO_BORDER);
-            dateCell.setHorizontalAlignment(Element.ALIGN_RIGHT);
-            head.addCell(dateCell);
+                PdfPCell dateCell = new PdfPCell(new Phrase(strDate, times10));
+                dateCell.setBorder(Rectangle.NO_BORDER);
+                dateCell.setHorizontalAlignment(Element.ALIGN_RIGHT);
+                head.addCell(dateCell);
 
-            document.add(head);
+                document.add(head);
 
-            PdfPTable title = new PdfPTable(1);
-            title.setWidthPercentage(100);
-            Phrase titleText = new Phrase("ZGODA RODZICA, (OPIEKUNA PRAWNEGO)\n" +
-                    "NA UDZIAŁ DZIECKA W WYDARZENIU ZORGANIZOWANYM PRZEZ AKADEMIĘ PRZYSZŁOŚCI\n", times10);
-            PdfPCell titleCell = new PdfPCell(titleText);
-            titleCell.setBorder(Rectangle.NO_BORDER);
-            titleCell.setHorizontalAlignment(Element.ALIGN_CENTER);
-            title.addCell(titleCell);
-            document.add(title);
+                PdfPTable title = new PdfPTable(1);
+                title.setWidthPercentage(100);
+                Phrase titleText = new Phrase("ZGODA RODZICA, (OPIEKUNA PRAWNEGO)\n" +
+                        "NA UDZIAŁ DZIECKA W WYDARZENIU ZORGANIZOWANYM PRZEZ AKADEMIĘ PRZYSZŁOŚCI\n", times10);
+                PdfPCell titleCell = new PdfPCell(titleText);
+                titleCell.setBorder(Rectangle.NO_BORDER);
+                titleCell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                title.addCell(titleCell);
+                document.add(title);
 
-            Phrase kidText = new Phrase("Wyrażam zgodę na udział mojego dziecka "
-                    + listOfKids.get(i).getNameChanged() + " " + listOfKids.get(i).getLastNameChanged()
-                    + "w wydarzeniu, \nktóre odbędzie się w budynku "
-                    + building + " na ulicy " + route + "\nw " + city + " w dniu "
-                    + eventDate + " roku w godzinach " + hours + ".", times10);
+                Phrase kidText = new Phrase("Wyrażam zgodę na udział mojego dziecka "
+                        + listOfKids.get(i).getNameChanged() + " " + listOfKids.get(i).getLastNameChanged()
+                        + "w wydarzeniu, \nktóre odbędzie się w budynku "
+                        + building + " na ulicy " + route + "\nw " + city + " w dniu "
+                        + eventDate + " roku w godzinach " + hours + ".", times10);
 
-            PdfPTable body = new PdfPTable(1);
-            PdfPCell bodyCell = new PdfPCell(kidText);
-            bodyCell.setBorder(Rectangle.NO_BORDER);
-            bodyCell.setHorizontalAlignment(Element.ALIGN_LEFT);
-            body.addCell(bodyCell);
-            document.add(body);
+                PdfPTable body = new PdfPTable(1);
+                PdfPCell bodyCell = new PdfPCell(kidText);
+                bodyCell.setBorder(Rectangle.NO_BORDER);
+                bodyCell.setHorizontalAlignment(Element.ALIGN_LEFT);
+                body.addCell(bodyCell);
+                document.add(body);
 
-            if (eventStart.length() > 0 && eventEnd.length() > 0) {
-                PdfPTable eventStartEnd = new PdfPTable(1);
-                Phrase eventStartEndText = new Phrase("Wyjście sprzed szkoły nastąpi o godzinie " + eventStart
-                        + ". Powrót planowany jest na godzinę " + eventEnd + ".\n"
-                        + "Dziecko zostanie zabrane na spotkanie i odwiezione po nim pod Szkołę Podstawową nr "
-                        + collegeNumber + ".", times10);
-                PdfPCell eventStartEndCell = new PdfPCell(eventStartEndText);
-                eventStartEndCell.setHorizontalAlignment(Element.ALIGN_LEFT);
-                eventStartEndCell.setBorder(Rectangle.NO_BORDER);
-                eventStartEnd.addCell(eventStartEndCell);
-                document.add(eventStartEnd);
-            }
+                if (eventStart.length() > 0 && eventEnd.length() > 0) {
+                    PdfPTable eventStartEnd = new PdfPTable(1);
+                    Phrase eventStartEndText = new Phrase("Wyjście sprzed szkoły nastąpi o godzinie " + eventStart
+                            + ". Powrót planowany jest na godzinę " + eventEnd + ".\n"
+                            + "Dziecko zostanie zabrane na spotkanie i odwiezione po nim pod Szkołę Podstawową nr "
+                            + collegeNumber + ".", times10);
+                    PdfPCell eventStartEndCell = new PdfPCell(eventStartEndText);
+                    eventStartEndCell.setHorizontalAlignment(Element.ALIGN_LEFT);
+                    eventStartEndCell.setBorder(Rectangle.NO_BORDER);
+                    eventStartEnd.addCell(eventStartEndCell);
+                    document.add(eventStartEnd);
+                }
 
-            PdfPTable permission = new PdfPTable(1);
-            Phrase permissionText = new Phrase("Wyrażam zgodę na samodzielny powrót " +
-                    "dziecka do domu / odebranie go przez osobę dorosłą*.\n"
-                    + "Za szkody wynikające z nieprzestrzegania regulaminu wyjść, " +
-                    "AKADEMIA PRZYSZŁOŚCI odpowiada rodzic.", times10);
-            PdfPCell permissionCell = new PdfPCell(permissionText);
-            permissionCell.setHorizontalAlignment(Element.ALIGN_LEFT);
-            permissionCell.setBorder(Rectangle.NO_BORDER);
-            permission.addCell(permissionCell);
-            document.add(permission);
+                PdfPTable permission = new PdfPTable(1);
+                Phrase permissionText = new Phrase("Wyrażam zgodę na samodzielny powrót " +
+                        "dziecka do domu / odebranie go przez osobę dorosłą*.\n"
+                        + "Za szkody wynikające z nieprzestrzegania regulaminu wyjść, " +
+                        "AKADEMIA PRZYSZŁOŚCI odpowiada rodzic.", times10);
+                PdfPCell permissionCell = new PdfPCell(permissionText);
+                permissionCell.setHorizontalAlignment(Element.ALIGN_LEFT);
+                permissionCell.setBorder(Rectangle.NO_BORDER);
+                permission.addCell(permissionCell);
+                document.add(permission);
 
-            PdfPTable end = new PdfPTable(1);
-            Phrase endText = new Phrase("…………………………………………………………" +
-                    "\n/ Podpis rodzica, (prawnego opiekuna)/\n" +
-                    "Tel. kontaktowy : " + telephone, times10);
-            PdfPCell endCell = new PdfPCell(endText);
-            endCell.setHorizontalAlignment(Element.ALIGN_RIGHT);
-            endCell.setBorder(Rectangle.NO_BORDER);
-            end.addCell(endCell);
-            document.add(end);
+                PdfPTable end = new PdfPTable(1);
+                Phrase endText = new Phrase("…………………………………………………………" +
+                        "\n/ Podpis rodzica, (prawnego opiekuna)/\n" +
+                        "Tel. kontaktowy : " + telephone, times10);
+                PdfPCell endCell = new PdfPCell(endText);
+                endCell.setHorizontalAlignment(Element.ALIGN_RIGHT);
+                endCell.setBorder(Rectangle.NO_BORDER);
+                end.addCell(endCell);
+                document.add(end);
 
-            PdfPTable star = new PdfPTable(1);
-            Phrase starText = new Phrase("*niepotrzebne proszę skreślić\n------------------------" +
-                    "----------------------------------------------------------------------------" +
-                    "--------------------------------------------------", times10);
-            PdfPCell starCell = new PdfPCell(starText);
-            starCell.setHorizontalAlignment(Element.ALIGN_LEFT);
-            starCell.setBorder(Rectangle.NO_BORDER);
-            star.addCell(starCell);
-            document.add(star);
+                PdfPTable star = new PdfPTable(1);
+                Phrase starText = new Phrase("*niepotrzebne proszę skreślić\n------------------------" +
+                        "----------------------------------------------------------------------------" +
+                        "--------------------------------------------------", times10);
+                PdfPCell starCell = new PdfPCell(starText);
+                starCell.setHorizontalAlignment(Element.ALIGN_LEFT);
+                starCell.setBorder(Rectangle.NO_BORDER);
+                star.addCell(starCell);
+                document.add(star);
 /*
 
 
@@ -179,13 +180,17 @@ public class GenerateDocument {
                     "------------------------------------------------------------------------------" +
                     "------------------------");
             document.add(line);*/
-            if(((i % 2) == 0) && i != 0) {
-                document.newPage();
+                if (((i % 2) == 0) && i != 0) {
+                    document.newPage();
+                }
             }
+
+            document.close();
+        } catch (Exception ioe) {
+            Toast.makeText(context, "Prawdopodobnie nie dodano dzieci do bazy.", Toast.LENGTH_SHORT).show();
         }
 
-        document.close();
-
+        try{
         String email = SchoolCoordinatorRepository.findAll(context).get(0).getMail();
         Log.e("TEST WYSYLANIA ->",email);
         Intent emailIntent = new Intent(Intent.ACTION_SEND);
@@ -198,10 +203,14 @@ public class GenerateDocument {
                 "\n Pozdrawiam\nLider kolegium nr: "+collegeNumber + " w "+city);
         emailIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse("file://"+Environment.getExternalStorageDirectory().toString() + "/liderap/zgodatemplate.pdf"));
 
-        try {
+
+            emailIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
             context.startActivity(Intent.createChooser(emailIntent, "Send mail..."));
         } catch (android.content.ActivityNotFoundException ex) {
             Toast.makeText(context, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
+        } catch (IndexOutOfBoundsException exa){
+            Toast.makeText(context, "Nie dodano koordynatora szkolnego.", Toast.LENGTH_SHORT).show();
         }
     }
 

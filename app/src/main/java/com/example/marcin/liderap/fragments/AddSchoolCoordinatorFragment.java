@@ -83,7 +83,7 @@ public class AddSchoolCoordinatorFragment extends Fragment {
                         model.setLastName(txtLastName.getText().toString());
                         model.setMail(txtCollege.getText().toString());
                         model.setCollege(txtCollege.getText().toString());
-                        SchoolCoordinatorRepository.updateSchoolCoordinator(getContext(), model);
+                        SchoolCoordinatorRepository.updateSchoolCoordinator(getActivity(), model);
                         ft.beginTransaction().replace(R.id.content_frame, new SCManagementFragment()).addToBackStack("fragBack").commit();
                     } else {
 
@@ -103,7 +103,7 @@ public class AddSchoolCoordinatorFragment extends Fragment {
                         } else {
                             SchoolCoordinator schoolCoordinator = new SchoolCoordinator(textName, textLastName, textEmail, textCollege);
 
-                            SchoolCoordinatorRepository.addSchoolCoordinator(getContext(), schoolCoordinator);
+                            SchoolCoordinatorRepository.addSchoolCoordinator(getActivity(), schoolCoordinator);
                             ft.beginTransaction().replace(R.id.content_frame, new SCManagementFragment()).addToBackStack("fragBack").commit();
                         }
                     }

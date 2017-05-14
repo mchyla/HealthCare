@@ -25,27 +25,38 @@
         android:textSize="60px"
         android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/textLeaderName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/headTextView"
-        android:ems="10"
-        android:hint="@string/name"
-        android:inputType="textPersonName" />
 
-    <EditText
-        android:id="@+id/textLeaderLastName"
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/textLeaderName"
-        android:ems="10"
-        android:hint="@string/lastName"
-        android:inputType="textPersonName" />
+        android:layout_height="40dp"
+        android:layout_below="@+id/headTextView"
+        android:id="@+id/nameLastNameLinearLayout">
+        <EditText
+            android:id="@+id/textLeaderName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/headTextView"
+            android:ems="10"
+            android:layout_weight="0.5"
+            android:hint="@string/name"
+            android:inputType="textPersonName" />
+        <EditText
+            android:id="@+id/textLeaderLastName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textLeaderName"
+            android:ems="10"
+            android:layout_weight="0.5"
+            android:hint="@string/lastName"
+            android:inputType="textPersonName" />
+    </LinearLayout>
+
+
+
 
     <EditText
         android:id="@+id/textLeaderEmail"
@@ -53,7 +64,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/textLeaderLastName"
+        android:layout_below="@+id/nameLastNameLinearLayout"
         android:ems="10"
         android:hint="@string/email"
         android:inputType="textPersonName" />
@@ -102,6 +113,12 @@
         android:hint="@string/telephone"
         android:inputType="number" />
 
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@+id/textLeaderTelephone"
+        android:id="@+id/namePinLinearLayout">
     <EditText
         android:id="@+id/textLeaderPin"
         android:layout_width="wrap_content"
@@ -111,6 +128,7 @@
         android:layout_below="@+id/textLeaderTelephone"
         android:ems="10"
         android:hint="@string/pin"
+        android:layout_weight="0.5"
         android:inputType="numberPassword" />
 
     <EditText
@@ -122,7 +140,9 @@
         android:layout_below="@+id/textLeaderPin"
         android:ems="10"
         android:hint="@string/confirmPin"
+        android:layout_weight="0.5"
         android:inputType="numberPassword" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -140,7 +160,9 @@
             android:layout_width="0.0dip"
             android:layout_height="fill_parent"
             android:layout_weight="1.0"
-            android:text="@string/confirm" />
+            android:text="@string/confirm"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:textColor="@color/white"/>
 
         <Button
             android:id="@+id/cancelAddCoordinatorButton"
@@ -148,7 +170,9 @@
             android:layout_height="fill_parent"
             android:layout_weight="1.0"
             android:layout_alignParentBottom="true"
-            android:text="@string/cancel" />
+            android:text="@string/cancel"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/colorAccent"/>
 
     </LinearLayout>
 

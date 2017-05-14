@@ -52,7 +52,7 @@ public class KidManagementFragment extends Fragment {
             e.printStackTrace();
         }
         super.onActivityCreated(savedInstanceState);
-        KidAdapter adapter = new KidAdapter(getContext(),
+        KidAdapter adapter = new KidAdapter(getActivity(),
                 R.layout.listitem,
                 kidArrayList);
         lv.setAdapter(adapter);

@@ -87,7 +87,7 @@ public class AddKidFragment extends Fragment {
                         model.setLastName(txtLastName.getText().toString());
                         model.setLastNameChanged(txtLastNameChanged.getText().toString());
                         model.setCollege(txtCollege.getText().toString());
-                        OrmLiteKidRepository.updateKid(getContext(), model);
+                        OrmLiteKidRepository.updateKid(getActivity(), model);
                         ft.beginTransaction().replace(R.id.content_frame, new KidManagementFragment()).addToBackStack("fragBack").commit();
                     } else {
                         Kid kid = new Kid();

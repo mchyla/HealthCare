@@ -45,9 +45,10 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentTop="true"
             android:layout_weight="0.5"
-            android:ems="15"
+            android:ems="14"
             android:hint="@string/building"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textAlignment="center"/>
 
     </LinearLayout>
 
@@ -60,28 +61,51 @@
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="117dp"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_above="@+id/textLastName"
             android:layout_alignParentStart="true"
             android:layout_alignTop="@+id/textHours"
             android:layout_toStartOf="@+id/textHours"
-            android:layout_weight="0.46"
+            android:layout_weight="0.3"
             android:ems="10"
             android:text="@string/inTime"
-            android:textAlignment="viewEnd"
+            android:textAlignment="center"
             android:textSize="15dp" />
 
+        <EditText
+            android:id="@+id/textMeetingTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_weight="0.3"
+            android:hint="@string/shoolLeaveHour"
+            android:inputType="time"
+            android:onClick="showMeetingStartTimePickerDialog"
+            android:focusableInTouchMode="false"/>
         <EditText
             android:id="@+id/textHours"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentTop="true"
-            android:layout_weight="0.5"
-            android:ems="15"
-            android:hint="@string/hours"
-            android:inputType="textPersonName" />
+            android:layout_weight="0.1"
+            android:textAlignment="center"
+            android:text="-"
+            android:enabled="false"
+        android:inputType="textPersonName" />
+        <EditText
+            android:id="@+id/textMeetingEndTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_weight="0.3"
+            android:hint="@string/shoolLeaveHour"
+            android:inputType="time"
+            android:onClick="showMeetingEndTimePickerDialog"
+            android:focusableInTouchMode="false"/>
 
     </LinearLayout>
 
@@ -149,7 +173,8 @@
             android:layout_weight="0.5"
             android:ems="18"
             android:hint="@string/eventDate"
-            android:inputType="date" />
+            android:onClick="showDatePickerDialog"
+            android:focusableInTouchMode="false"/>
 
     </LinearLayout>
 
@@ -183,7 +208,9 @@
             android:layout_weight="0.5"
             android:ems="8"
             android:hint="@string/shoolLeaveHour"
-            android:inputType="time" />
+            android:inputType="time"
+            android:onClick="showEventStartTimePickerDialog"
+            android:focusableInTouchMode="false"/>
 
     </LinearLayout>
 
@@ -217,7 +244,9 @@
             android:layout_weight="0.5"
             android:ems="8"
             android:hint="@string/shoolReturnHour"
-            android:inputType="time" />
+            android:inputType="time"
+            android:onClick="showEventEndTimePickerDialog"
+            android:focusableInTouchMode="false"/>
 
     </LinearLayout>
 
@@ -239,14 +268,18 @@
             android:layout_width="0.0dip"
             android:layout_height="fill_parent"
             android:layout_weight="1.0"
-            android:text="@string/confirm" />
+            android:text="@string/confirm"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:backgroundTint="@color/colorPrimary"/>
 
         <Button
             android:id="@+id/canceAddKidButton"
             android:layout_width="0.0dip"
             android:layout_height="fill_parent"
             android:layout_weight="1.0"
-            android:text="@string/cancel" />
+            android:text="@string/cancel"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:backgroundTint="@color/colorAccent"/>
 
     </LinearLayout>
 

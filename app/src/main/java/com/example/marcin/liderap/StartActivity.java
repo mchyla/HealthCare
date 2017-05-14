@@ -26,6 +26,8 @@ public class StartActivity extends AppCompatActivity {
         Button  registerButton = (Button) findViewById(R.id.buttonRegister);
         Button  loginButton = (Button) findViewById(R.id.buttonLogin);
 
+        registerButton.setAlpha(1.0f);
+        loginButton.setAlpha(1.0f);
 
         try {
             //Leader leader = null;

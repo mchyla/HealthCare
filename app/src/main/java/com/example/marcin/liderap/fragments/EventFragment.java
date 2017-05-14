@@ -26,13 +26,15 @@ import java.sql.SQLException;
 
 public class EventFragment extends Fragment {
 
-    EditText textHours = null;
-    EditText building = null;
-    EditText route = null;
-    EditText eventDate = null;
-    EditText startHour = null;
-    EditText endHour = null;
-    Leader leader = null;
+    private EditText textHours = null;
+    private EditText building = null;
+    private EditText route = null;
+    private EditText eventDate = null;
+    private EditText startHour = null;
+    private EditText endHour = null;
+    private Leader leader = null;
+    private EditText meetingTime = null;
+    private EditText meetingTimeEnd = null;
 
 
     @Nullable
@@ -58,6 +60,8 @@ public class EventFragment extends Fragment {
         eventDate = (EditText) rootView.findViewById(R.id.textEventDate);
         startHour = (EditText) rootView.findViewById(R.id.textStartHoursInput);
         endHour = (EditText) rootView.findViewById(R.id.textEndHoursInput);
+        meetingTime = (EditText) rootView.findViewById(R.id.textMeetingTime);
+        meetingTimeEnd = (EditText) rootView.findViewById(R.id.textMeetingEndTime);
 
         enerateEvent.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,14 +73,21 @@ public class EventFragment extends Fragment {
                         building.setError("Wydarzenie musi się gdzieś odbyć.");
                     } else if (route.getText().length() == 0) {
                         route.setError("Podaj adres.");
-                    } else if (textHours.getText().length() == 0) {
-                        textHours.setError("W jakim czasie odbędzie się wydarzenie?");
                     } else if (eventDate.getText().length() == 0){
                         eventDate.setError("W jaki dzień odbędzie się wydarzenie?");
+                    } else if (meetingTime.getText().length() == 0){
+                        meetingTime.setError("O której zacznie się wydarzenie?");
+                    } else if (meetingTimeEnd.getText().length() == 0){
+                        meetingTimeEnd.setError("O której skończy się wydarzenie?");
                     } else {
-                        GenerateDocument.genrateDocument(getContext(), building.getText().toString(),
+
+                        String meeting = meetingTime.getText().toString() + " "
+                                + textHours.getText().toString() + " "
+                                + meetingTimeEnd.getText().toString();
+
+                        GenerateDocument.genrateDocument(getActivity(), building.getText().toString(),
                                 leader.getCityChanged(), route.getText().toString(),
-                                textHours.getText().toString(), eventDate.getText().toString(),
+                                meeting, eventDate.getText().toString(),
                                 startHour.getText().toString(), endHour.getText().toString(),
                                 leader.getCollage(), leader.getPhone());
                     }
@@ -93,8 +104,18 @@ public class EventFragment extends Fragment {
             }
         });
 
+//        eventDate.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                showDatePickerDialog(v);
+//            }
+//        });
+
         return rootView;
     }
+
+
+
 
 
 }
