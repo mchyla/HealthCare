@@ -42,6 +42,7 @@ public class AddSchoolCoordinatorFragment extends Fragment {
 
         final View rootView = inflater.inflate(R.layout.add_school_coordinator_fragment, container, false);
         Button addSCButton = (Button) rootView.findViewById(R.id.addSchoolCoordinatorButton);
+        Button cancelButton = (Button) rootView.findViewById(R.id.cancelAddCoordinatorButton);
 
         txtName = (EditText) rootView.findViewById(textHours);
         txtLastName = (EditText) rootView.findViewById(textLastName);
@@ -108,6 +109,19 @@ public class AddSchoolCoordinatorFragment extends Fragment {
                         }
                     }
                 } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    getActivity().getFragmentManager().popBackStack();
+                } catch (Exception e) {
+                    Toast.makeText(getActivity(), e.getMessage(),
+                            Toast.LENGTH_LONG).show();
                     e.printStackTrace();
                 }
             }

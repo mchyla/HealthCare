@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.marcin.liderap.R;
 import com.example.marcin.liderap.model.Leader;
@@ -44,6 +45,7 @@ public class EventFragment extends Fragment {
         final View rootView = inflater.inflate(R.layout.generate_doc_layout, container, false);
         setHasOptionsMenu(true);
         Button enerateEvent = (Button) rootView.findViewById(R.id.generateEvent);
+        Button cancelButton = (Button) rootView.findViewById(R.id.cancelEventCreationButton);
         ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Dodaj wydarzenie");
 
         Bundle bundle = getArguments();
@@ -110,6 +112,19 @@ public class EventFragment extends Fragment {
 //                showDatePickerDialog(v);
 //            }
 //        });
+
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    getActivity().getFragmentManager().popBackStack();
+                } catch (Exception e) {
+                    Toast.makeText(getActivity(), e.getMessage(),
+                            Toast.LENGTH_LONG).show();
+                    e.printStackTrace();
+                }
+            }
+        });
 
         return rootView;
     }

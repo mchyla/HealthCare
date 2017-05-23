@@ -41,7 +41,7 @@
             android:layout_width="25dp"
             android:layout_height="wrap_content"
             android:layout_weight="1.49"
-            android:text="@string/college" />
+            android:text="@string/schoolNumber" />
 
         <TextView
             android:id="@+id/placeholder"

@@ -119,7 +119,7 @@ public class GenerateDocument {
 
                 Phrase kidText = new Phrase("Wyrażam zgodę na udział mojego dziecka "
                         + listOfKids.get(i).getNameChanged() + " " + listOfKids.get(i).getLastNameChanged()
-                        + "w wydarzeniu, \nktóre odbędzie się w budynku "
+                        + " w wydarzeniu, \nktóre odbędzie się w budynku "
                         + building + " na ulicy " + route + "\nw " + city + " w dniu "
                         + eventDate + " roku w godzinach " + hours + ".", times10);
 
@@ -180,7 +180,7 @@ public class GenerateDocument {
                     "------------------------------------------------------------------------------" +
                     "------------------------");
             document.add(line);*/
-                if (((i % 2) == 0) && i != 0) {
+                if ((((i+1) % 3) == 0)) {
                     document.newPage();
                 }
             }

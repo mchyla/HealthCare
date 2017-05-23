@@ -41,7 +41,8 @@ public class AddKidFragment extends Fragment {
         final View rootView = inflater.inflate(R.layout.add_kid_fragment, container, false);
         setHasOptionsMenu(true);
         Button addPlaceButton = (Button) rootView.findViewById(R.id.addKidButton);
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Dodaj/edytuj dziecko");
+        Button cancelButton = (Button) rootView.findViewById(R.id.cancelAddKidButton);
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Dodaj/edytuj dziecko");
         //FloatingActionButton fab = (FloatingActionButton) rootView.findViewById(R.id.fab);
         //fab.setOnClickListener(new View.OnClickListener() {
         //    @Override
@@ -70,7 +71,9 @@ public class AddKidFragment extends Fragment {
 
         } else {
             txtName.setText(model.getName());
+            txtNameChanged.setText(model.getNameChanged());
             txtLastName.setText(model.getLastName());
+            txtLastNameChanged.setText(model.getLastNameChanged());
             txtCollege.setText(model.getCollege());
 
         }
@@ -105,6 +108,19 @@ public class AddKidFragment extends Fragment {
                     e.printStackTrace();
                 }
 
+            }
+        });
+
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    getActivity().getFragmentManager().popBackStack();
+                } catch (Exception e) {
+                    Toast.makeText(getActivity(), e.getMessage(),
+                            Toast.LENGTH_LONG).show();
+                    e.printStackTrace();
+                }
             }
         });
 

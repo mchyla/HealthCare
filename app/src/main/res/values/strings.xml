@@ -52,7 +52,9 @@
     <string name="shoolReturnHour">18:00</string>
 
 
-    <string name="college">Kolegium</string>
+    <string name="college">Kolegium (numer szkoły)</string>
+    <string name="college2">Numer szkoły</string>
+    <string name="schoolNumber">SP Nr</string>
 
 
     <!--School coordinator-->
