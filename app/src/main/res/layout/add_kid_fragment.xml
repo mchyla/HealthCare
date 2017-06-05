@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white">
 
     <ImageView
@@ -11,122 +11,132 @@
         android:layout_height="fill_parent"
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
-        app:srcCompat="@drawable/background_blank_logo">
-    </ImageView>
+        app:srcCompat="@drawable/background_blank_logo"/>
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:gravity="center"
         android:text="@string/addKid"
-        android:layout_alignParentEnd="true"
         android:textSize="60px"
-        android:textStyle="bold"
-        android:gravity="center"/>
-        <EditText
-            android:id="@+id/textName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="@string/nameKid"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="46dp"
-            android:layout_alignParentEnd="true" />
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@+id/textView3"
+        android:id="@+id/nameNameChangedLinearLayout">
+    <EditText
+        android:id="@+id/textName"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:ems="10"
+        android:layout_weight="0.9"
+        android:hint="@string/nameKid"
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/textNameChanged"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/nameKidChanged"
-        android:inputType="textPersonName"
-        android:layout_below="@+id/textName"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_below="@+id/textName"
+        android:ems="10"
+        android:layout_weight="0.1"
+        android:hint="@string/nameKidChanged"
+        android:inputType="textPersonName" />
+    </LinearLayout>
 
-        <EditText
-            android:id="@+id/textLastName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="@string/lastNameKid"
-            android:layout_below="@+id/textNameChanged"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:id="@+id/textLastName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/nameNameChangedLinearLayout"
+        android:ems="10"
+        android:hint="@string/lastNameKid"
+        android:inputType="textPersonName" />
+
     <EditText
         android:id="@+id/textLastNameChanged"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="@string/lastNameKidChanged"
-        android:layout_below="@+id/textLastName"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_below="@+id/textLastName"
+        android:ems="10"
+        android:hint="@string/lastNameKidChanged"
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/textCollege"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="@string/college"
-        android:layout_below="@+id/textLastNameChanged"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_below="@+id/textLastNameChanged"
+        android:ems="10"
+        android:hint="@string/college"
+        android:inputType="textPersonName" />
 
     <LinearLayout
-        android:orientation="horizontal"
-        android:paddingStart="10.0dip"
-        android:paddingTop="5.0dip"
-        android:paddingEnd="10.0dip"
-        android:paddingBottom="1.0dip"
+        android:id="@+id/linearLayout"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:id="@+id/linearLayout"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/textCollege"
-        android:layout_alignParentStart="true">
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        android:paddingBottom="1.0dip"
+        android:paddingEnd="10.0dip"
+        android:paddingStart="10.0dip"
+        android:paddingTop="5.0dip">
 
         <Button
             android:id="@+id/addKidButton"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="0.0dip"
             android:layout_height="fill_parent"
-            android:text="@string/confirm"
             android:layout_weight="1.0"
-            style="@style/Widget.AppCompat.Button.Colored"
             android:backgroundTint="@color/colorPrimary"
-            android:paddingStart="5dp"/>
+            android:paddingStart="5dp"
+            android:text="@string/confirm" />
 
         <Button
             android:id="@+id/cancelAddKidButton"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="0.0dip"
             android:layout_height="fill_parent"
-            android:text="@string/cancel"
             android:layout_weight="1.0"
-            style="@style/Widget.AppCompat.Button.Colored"
             android:backgroundTint="@color/colorAccent"
-            android:paddingEnd="5dp"/>
+            android:paddingEnd="5dp"
+            android:text="@string/cancel" />
 
     </LinearLayout>
 
-    <EditText
+    <TextView
         android:id="@+id/editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/proTip"
-        android:editable="false"
-        android:layout_marginTop="15dp"
-        android:ems="10"
-        android:inputType="textMultiLine"
-        android:layout_below="@+id/linearLayout"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_below="@+id/linearLayout"
+        android:layout_marginTop="15dp"
+        android:editable="false"
+        android:ems="10"
+        android:clickable="false"
+        android:hint="@string/proTip"
+        android:inputType="textMultiLine" />
 
 
 </RelativeLayout>

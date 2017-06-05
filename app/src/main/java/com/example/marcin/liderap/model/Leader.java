@@ -29,8 +29,27 @@ public class Leader {
     private String cityChanged;
     @DatabaseField
     private String phone;
+    @DatabaseField
+    private String securityQuestion;
+    @DatabaseField
+    private String securityAnswer;
 
-    public Leader(String collage, String name, String lastName, int pin, String email, String city, String cityChanged, String phone) {
+    public Leader(String collage, String name, String lastName, int pin, String email, String city,
+                  String cityChanged, String phone, String securityQuestion, String securityAnswer) {
+        this.collage = collage;
+        this.name = name;
+        this.lastName = lastName;
+        this.pin = pin;
+        this.email = email;
+        this.city = city;
+        this.cityChanged = cityChanged;
+        this.phone = phone;
+        this.securityQuestion = securityQuestion;
+        this.securityAnswer = securityAnswer;
+    }
+
+    public Leader(String collage, String name, String lastName, int pin, String email,
+                  String city, String cityChanged, String phone) {
         this.collage = collage;
         this.name = name;
         this.lastName = lastName;
@@ -42,6 +61,22 @@ public class Leader {
     }
 
     public Leader() {
+    }
+
+    public String getSecurityQuestion() {
+        return securityQuestion;
+    }
+
+    public void setSecurityQuestion(String securityQuestion) {
+        this.securityQuestion = securityQuestion;
+    }
+
+    public String getSecurityAnswer() {
+        return securityAnswer;
+    }
+
+    public void setSecurityAnswer(String securityAnswer) {
+        this.securityAnswer = securityAnswer;
     }
 
     public String getCollage() {

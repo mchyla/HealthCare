@@ -35,6 +35,11 @@
     <string name="fillAllFields">Proszę uzupełnij wszystkie pola.</string>
     <string name="wrongEmail">Proszę podać poprawny email.</string>
     <string name="pin2pinWrong">Piny się nie zgadzają.</string>
+    <string name="setNewPin">Ustaw nowy pin</string>
+    <string name="securityQuestion">Pytanie bezpieczeństwa</string>
+    <string name="securityAnswer">Odpowiedź</string>
+    <string name="securityAnswer2">Podaj odpowiedź</string>
+    <string name="setNewPinTitle">Zmień pin</string>
 
     <!-- EVENT -->
     <string name="addEvent">Nowy event</string>
@@ -54,6 +59,7 @@
 
     <string name="college">Kolegium (numer szkoły)</string>
     <string name="college2">Numer szkoły</string>
+    <string name="college3">Nr Szkoły</string>
     <string name="schoolNumber">SP Nr</string>
 
 

@@ -37,7 +37,9 @@ public class RegisterActivity extends AppCompatActivity {
         final TextView phoneTextView = (TextView) findViewById(R.id.textLeaderTelephone);
         final TextView cityTextView = (TextView) findViewById(R.id.textLeaderCity);
         final TextView cityChangedTextView = (TextView) findViewById(R.id.textLeaderCityChanged) ;
-        final TextView collageTextView = (TextView) findViewById(R.id.textLeaderCollege) ;
+        final TextView collageTextView = (TextView) findViewById(R.id.textLeaderCollege);
+        final TextView securityQuestionTextView = (TextView) findViewById(R.id.textSecurityQuestion);
+        final TextView securityAnswerTextView = (TextView) findViewById(R.id.textSecurityAnswer);
 
         buttonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,6 +54,9 @@ public class RegisterActivity extends AppCompatActivity {
                 String city = cityTextView.getText().toString();
                 String cityChanged = cityChangedTextView.getText().toString();
                 String collage = collageTextView.getText().toString();
+                String securityQuestion = securityQuestionTextView.getText().toString();
+                String securityAnswer = securityAnswerTextView.getText().toString();
+
 
                 if(name.length() == 0){
                     nameTextView.setError("Imie jest wymagane.");
@@ -71,7 +76,11 @@ public class RegisterActivity extends AppCompatActivity {
                     pinTextView.setError("Pin jest wymagany.");
                 } else if (confirmPin.length() == 0) {
                     confirmPinTextView.setError("Potwierdzenie pinu jest wymagane.");
-                }  else {
+                } else if (securityQuestion.length() == 0) {
+                    securityQuestionTextView.setError("To pole jest wymagane.");
+                } else if (securityQuestion.length() == 0) {
+                    securityAnswerTextView.setError("To pole jest wymagane.");
+                } else {
                     if (email.contains("@") && email.contains(".")) {
                         if (pin.equals(confirmPin)) {
 
@@ -84,6 +93,8 @@ public class RegisterActivity extends AppCompatActivity {
                             leader.setCity(city);
                             leader.setCityChanged(cityChanged);
                             leader.setCollage(collage);
+                            leader.setSecurityQuestion(securityQuestion);
+                            leader.setSecurityAnswer(securityAnswer);
 
                             try {
                                 LeaderRepository.addLeader(getApplicationContext(), leader);

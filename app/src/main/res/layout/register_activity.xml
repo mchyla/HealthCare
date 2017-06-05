@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white">
 
     <ImageView
@@ -27,10 +27,11 @@
 
 
     <LinearLayout
+        android:id="@+id/nameLastNameLinearLayout"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_below="@+id/headTextView"
-        android:id="@+id/nameLastNameLinearLayout">
+        android:layout_below="@+id/headTextView">
+
         <EditText
             android:id="@+id/textLeaderName"
             android:layout_width="wrap_content"
@@ -38,10 +39,11 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/headTextView"
-            android:ems="10"
             android:layout_weight="0.5"
+            android:ems="10"
             android:hint="@string/name"
             android:inputType="textPersonName" />
+
         <EditText
             android:id="@+id/textLeaderLastName"
             android:layout_width="wrap_content"
@@ -49,13 +51,11 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/textLeaderName"
-            android:ems="10"
             android:layout_weight="0.5"
+            android:ems="10"
             android:hint="@string/lastName"
             android:inputType="textPersonName" />
     </LinearLayout>
-
-
 
 
     <EditText
@@ -91,90 +91,124 @@
         android:hint="@string/cityChanged"
         android:inputType="textPersonName" />
 
-    <EditText
-        android:id="@+id/textLeaderCollege"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/textLeaderCityChanged"
-        android:ems="10"
-        android:hint="@string/college"
-        android:inputType="textPersonName" />
 
-    <EditText
-        android:id="@+id/textLeaderTelephone"
+    <LinearLayout
+        android:id="@+id/telephoneCollegeNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/textLeaderCollege"
-        android:ems="10"
-        android:hint="@string/telephone"
-        android:inputType="number" />
+        android:layout_below="@+id/textLeaderCityChanged">
+
+        <EditText
+            android:id="@+id/textLeaderTelephone"
+            android:layout_width="181dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textLeaderCollege"
+            android:ems="10"
+            android:hint="@string/telephone"
+            android:inputType="number" />
+
+
+        <EditText
+            android:id="@+id/textLeaderCollege"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textLeaderCityChanged"
+            android:ems="10"
+            android:hint="@string/college2"
+            android:inputType="textPersonName" />
+
+    </LinearLayout>
 
 
     <LinearLayout
+        android:id="@+id/namePinLinearLayout"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_below="@+id/textLeaderTelephone"
-        android:id="@+id/namePinLinearLayout">
-    <EditText
-        android:id="@+id/textLeaderPin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/textLeaderTelephone"
-        android:ems="10"
-        android:hint="@string/pin"
-        android:layout_weight="0.5"
-        android:inputType="numberPassword" />
+        android:layout_below="@+id/telephoneCollegeNumber">
 
-    <EditText
-        android:id="@+id/textLeaderConfirmPin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/textLeaderPin"
-        android:ems="10"
-        android:hint="@string/confirmPin"
-        android:layout_weight="0.5"
-        android:inputType="numberPassword" />
+        <EditText
+            android:id="@+id/textLeaderPin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textLeaderTelephone"
+            android:layout_weight="0.5"
+            android:ems="10"
+            android:hint="@string/pin"
+            android:inputType="numberPassword" />
+
+        <EditText
+            android:id="@+id/textLeaderConfirmPin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textLeaderPin"
+            android:layout_weight="0.5"
+            android:ems="10"
+            android:hint="@string/confirmPin"
+            android:inputType="numberPassword" />
     </LinearLayout>
+
+        <EditText
+            android:id="@+id/textSecurityQuestion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/namePinLinearLayout"
+            android:layout_weight="0.5"
+            android:ems="10"
+            android:hint="@string/securityQuestion" />
+
+        <EditText
+            android:id="@+id/textSecurityAnswer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textSecurityQuestion"
+            android:layout_weight="0.5"
+            android:ems="10"
+            android:hint="@string/securityAnswer" />
+
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="17dp"
         android:orientation="horizontal"
         android:paddingBottom="1.0dip"
         android:paddingLeft="10.0dip"
-        android:paddingRight="10.0dip"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="17dp">
+        android:paddingRight="10.0dip">
 
         <Button
             android:id="@+id/addSchoolCoordinatorButton"
             android:layout_width="0.0dip"
             android:layout_height="fill_parent"
             android:layout_weight="1.0"
-            android:text="@string/confirm"
             android:backgroundTint="@color/colorPrimaryDark"
-            android:textColor="@color/white"
-            android:paddingStart="5.0dp"/>
+            android:paddingStart="5.0dp"
+            android:text="@string/confirm"
+            android:textColor="@color/white" />
 
         <Button
             android:id="@+id/cancelAddCoordinatorButton"
             android:layout_width="0.0dip"
             android:layout_height="fill_parent"
-            android:layout_weight="1.0"
             android:layout_alignParentBottom="true"
-            android:text="@string/cancel"
-            android:textColor="@color/white"
+            android:layout_weight="1.0"
             android:backgroundTint="@color/colorAccent"
-            android:paddingEnd="5.0dp"/>
+            android:paddingEnd="5.0dp"
+            android:text="@string/cancel"
+            android:textColor="@color/white" />
 
     </LinearLayout>
 

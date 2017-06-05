@@ -1,5 +1,6 @@
 package com.example.marcin.liderap;
 
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.marcin.liderap.fragments.SCManagementFragment;
 import com.example.marcin.liderap.model.Leader;
 import com.example.marcin.liderap.repository.LeaderRepository;
 
@@ -28,6 +30,7 @@ public class AuthenticationActivity extends AppCompatActivity {
         setContentView(R.layout.authentication);
 
         Button buttonConfirm = (Button) findViewById(R.id.buttonPin);
+        Button buttonChangePin = (Button) findViewById(R.id.btnSetNewPin);
         final EditText pinText = (EditText) findViewById(R.id.pin);
 
         buttonConfirm.setOnClickListener(new View.OnClickListener() {
@@ -58,6 +61,13 @@ public class AuthenticationActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Exception "+ex.getMessage(),
                             Toast.LENGTH_LONG).show();
                 }
+            }
+        });
+
+        buttonChangePin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AuthenticationActivity.this, SecurityQuestion.class));
             }
         });
 
