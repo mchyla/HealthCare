@@ -1,7 +1,9 @@
 package com.example.marcin.liderap;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -23,7 +25,7 @@ public class SetNewPin extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.security_question);
+        setContentView(R.layout.set_new_pin);
         //TextView headTextView = (TextView)findViewById(R.id.headTextView);
         // headTextView.setText(R.string.toRegister);
 
@@ -40,16 +42,19 @@ public class SetNewPin extends AppCompatActivity {
                 String newConfirmPin = confirmSetNewPin.getText().toString();
                 String newPin = setNewPin.getText().toString();
 
-                Leader leader = null;
+
                 try {
-                    leader = LeaderRepository.findAll(getApplicationContext()).get(0);
+                    Leader leader = LeaderRepository.findAll(getApplicationContext()).get(0);
                     if (newConfirmPin.length() == 0) {
                         confirmSetNewPin.setError("Pol jest wymagane.");
                     } else if (newPin.length() == 0) {
                         setNewPin.setError("Pol jest wymagane.");
                     } else {
                         if (newConfirmPin.equals(newPin)) {
+                            Log.i(newConfirmPin.toString(), newPin.toString());
                             leader.setPin(Integer.valueOf(newConfirmPin));
+                            LeaderRepository.updateLeader(getApplicationContext(), leader);
+                            startActivity(new Intent(SetNewPin.this, StartActivity.class));
                         } else {
                             Toast.makeText(getApplicationContext(), "Pin i potwierdzenie różnią się od siebie.",
                                     Toast.LENGTH_LONG).show();
